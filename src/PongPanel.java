@@ -71,6 +71,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 	private boolean sPressed;
 
 	/** The ball: position, diameter */
+	Image background;
 	private int ballX = 200; // qua bong di chuyen tu vi tri trung tam khi bat
 	// dau game
 	private int ballY = 200; // ... //
@@ -79,12 +80,15 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 	private int ballDeltaY = 3;
 
 	/** Player 1's paddle: position and size */
+	ImageIcon imgpad1;
+	ImageIcon ball1,ball2,ball3;
 	private int playerOneX = 0;
 	private int playerOneY = 250;
 	private int playerOneWidth = 30;
 	private int playerOneHeight = 80;
 
 	/** Player 2's paddle: position and size */
+	ImageIcon imgpad2;
 	private int playerTwoX = 465; // Doi chieu dai cua 2 thanh chan bang nhau
 	private int playerTwoY = 250;
 	private int playerTwoWidth = 30;
@@ -217,8 +221,6 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 					ballX = 250; // qua bong di chuyen tu vi tri trung tam khi
 					// bat dau game
 					ballY = 250; // ...
-					ballmove1 = true;
-					ballmove2 = false;
 				} else {
 					// If the ball hitting the paddle, it will bounce back
 					ballDeltaX *= -1; // bong cham vao thanh chan cua player 1
@@ -244,8 +246,6 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 					ballX = 250; // qua bong di chuyen tu vi tri trung tam khi
 					// bat dau game
 					ballY = 250; // ...
-					ballmove1 = false;
-					ballmove2 = true;
 				} else {
 
 					// If the ball hitting the paddle, it will bounce back
@@ -445,16 +445,16 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 			SecondWindow w = new SecondWindow();
 			w.setLocationRelativeTo(PongPanel.this);
 			w.setVisible(true);
-			Settings s = w.getSetings();
+			//Settings s = w.getSetings();
 			System.out.println("After open window");
 
 			// Stop and wait for user input
 
 			if (w.dialogResult == MyDialogResult.YES) {
-				System.out.printf("User settings: \n Username1: %s \n Username2: %s",
+/**				System.out.printf("User settings: \n Username1: %s \n Username2: %s",
 						s.getUserName1(), s.getUserName2());
 				namePlayer1 = s.getUserName1();
-				namePlayer2 =s.getUserName2();
+				namePlayer2 =s.getUserName2(); */
 			} else {
 				System.out.println("User chose to cancel");
 			}
