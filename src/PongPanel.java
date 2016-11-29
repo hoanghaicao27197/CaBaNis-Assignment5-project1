@@ -16,7 +16,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-
 /**
  * 
  * @author CaBaNis - Team 2.5
@@ -34,9 +33,9 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 	ImageIcon imgbpong;
 
 	// Buttons:
-	Point pPlay, pSetting, pBack, pMenu, pSa,pName;
-	ImageIcon imgbtnPlay, imgbtnSetting, imgbtnBack, imgbgStart, imgbtnMenu, imgbtnSa,imgbtnName;
-	int rPlay, rSetting, rBack, rMenu, rSa,rName;
+	Point pPlay, pSetting, pBack, pMenu, pSa, pName;
+	ImageIcon imgbtnPlay, imgbtnSetting, imgbtnBack, imgbgStart, imgbtnMenu, imgbtnSa, imgbtnName;
+	int rPlay, rSetting, rBack, rMenu, rSa, rName;
 	String nameP, nameS, nameB, nameN, namePlayer1, namePlayer2;
 	boolean intersec, intersec1, intersec2, intersec3, intersec4;
 
@@ -89,13 +88,13 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		pSetting = new Point(25, 425);
 		pMenu = new Point(180, 280);
 		pSa = new Point(180, 400);
-		pName = new Point(100,100);
+
 		rMenu = 40;
 		rSa = 35;
 		rSetting = 20;
 		rBack = 15;
 		rPlay = 40;
-		rName = 40;
+
 		// Image links:
 		nameP = "image/play.png";
 		nameS = "image/SettingI.png";
@@ -232,17 +231,18 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		imgbgStart = new ImageIcon("background/backgrstart.jpg");
 		// g.setColor(Color.GREEN);
 
-		/** Welcome Screen */	
+		/** Welcome Screen */
 
 		if (showTitleScreen) {
 			Image imgbpong = new ImageIcon("background/backgrstart.jpg").getImage();
-
+			pName = new Point(000,00);
+			rName = 40;
 			// Game title:
 			// g.setFont(new Font(Font.DIALOG, Font.BOLD, 40));
 			// g.setFont(new Font(Font.DIALOG, Font.BOLD, 40));
 			// g.drawString("Kimochi Pong", 120, 100);
 			g.drawImage(imgbpong, 0, 0, 500, 500, null);
-			g.drawImage(imgbtnPlay.getImage(), pPlay.x -20 , pPlay.y  - 100, rPlay * 3, rPlay * 3, null);
+			g.drawImage(imgbtnPlay.getImage(), pPlay.x - 20, pPlay.y - 100, rPlay * 3, rPlay * 3, null);
 			g.drawImage(imgbtnSetting.getImage(), pSetting.x - rSetting, pSetting.y - rSetting, rSetting * 2,
 					rSetting * 2, null);
 			if (intersec4) {
@@ -299,6 +299,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		if (setting) {
 			imgbtnBack = new ImageIcon(nameB);
 			imgbtnName = new ImageIcon(nameN);
+			pName = new Point(100, 200);
+			rName = 40;
 			g.drawImage(imgbgStart.getImage(), 0, 0, 500, 500, null);
 			// g.setFont(new Font(Font.DIALOG, Font.BOLD, 24));
 			// g.drawString("Press 'C' to Menu.", 135, 200);
@@ -391,20 +393,20 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 			ballY = 250;
 			playerOneScore = 0;
 			playerTwoScore = 0;
-		} else if (setting && e.getKeyCode() == KeyEvent.VK_N){
+		} else if (setting && e.getKeyCode() == KeyEvent.VK_N) {
 			SecondWindow w = new SecondWindow();
 			w.setLocationRelativeTo(PongPanel.this);
 			w.setVisible(true);
 			SettingsUsername s = w.getSetings();
 			System.out.println("After open window");
-			
+
 			// Stop and wait for user input
-			
+
 			if (w.dialogResult == MyDialogResult.YES) {
-				System.out.printf("User settings: \n Username1: %s \n Username2: %s",
-						s.getUserName1(), s.getUserName2());
+				System.out.printf("User settings: \n Username1: %s \n Username2: %s", s.getUserName1(),
+						s.getUserName2());
 				namePlayer1 = s.getUserName1();
-				namePlayer2 =s.getUserName2();
+				namePlayer2 = s.getUserName2();
 			} else {
 				System.out.println("User chose to cancel");
 			}
@@ -454,7 +456,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		} else {
 			// intersec = false;
 			nameP = "image/play.png";
-		}if (getPointDistance(arg0.getPoint(), pName) <= rName) {
+		}
+		if (getPointDistance(arg0.getPoint(), pName) <= rName) {
 			// intersec = true;
 			SecondWindow w = new SecondWindow();
 			w.setLocationRelativeTo(PongPanel.this);
@@ -479,7 +482,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		} else {
 			intersec4 = false;
 		}
-		
+
 		if (getPointDistance(arg0.getPoint(), pBack) <= rBack) {
 			intersec2 = true;
 
