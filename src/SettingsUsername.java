@@ -4,9 +4,11 @@ public class SettingsUsername {
 	private String userName1, userName2;
 	private Color backgroundColor, paddleColor, ballColor;
 
-	public SettingsUsername(){	}
-	
-	public SettingsUsername(String userName1, String userName2, Color backgroundColor, Color paddleColor, Color ballColor) {
+	public SettingsUsername() {
+	}
+
+	public SettingsUsername(String userName1, String userName2, Color backgroundColor, Color paddleColor,
+			Color ballColor) {
 		super();
 		this.userName1 = userName1;
 		this.userName2 = userName2;

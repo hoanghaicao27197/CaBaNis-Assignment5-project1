@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.Shape;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -14,6 +15,7 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
 
 /**
  * 
@@ -52,7 +54,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 	private int diameter = 23;
 	private int ballDeltaX = -1;
 	private int ballDeltaY = 3;
-
+	SecondWindow w = new SecondWindow();
 	// Player 1:
 	ImageIcon imgpad1;
 	private int playerOneX = 25;
@@ -385,21 +387,20 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 			ballY = 250;
 			playerOneScore = 0;
 			playerTwoScore = 0;
-		} else if (setting && e.getKeyCode() == KeyEvent.VK_N) {
+		} else if (setting && e.getKeyCode() == KeyEvent.VK_N){
 			SecondWindow w = new SecondWindow();
 			w.setLocationRelativeTo(PongPanel.this);
 			w.setVisible(true);
-			// Settings s = w.getSetings();
+			SettingsUsername s = w.getSetings();
 			System.out.println("After open window");
-
+			
 			// Stop and wait for user input
-
+			
 			if (w.dialogResult == MyDialogResult.YES) {
-				// System.out.printf("User settings: \n Username1: %s \n
-				// Username2: %s",
-				// s.getUserName1(), s.getUserName2());
-				// namePlayer1 = s.getUserName1();
-				// namePlayer2 =s.getUserName2();
+				System.out.printf("User settings: \n Username1: %s \n Username2: %s",
+						s.getUserName1(), s.getUserName2());
+				namePlayer1 = s.getUserName1();
+				namePlayer2 =s.getUserName2();
 			} else {
 				System.out.println("User chose to cancel");
 			}
