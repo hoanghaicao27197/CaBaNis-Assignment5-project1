@@ -85,8 +85,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		namePlayer1 = "Player 1";
 		namePlayer2 = "Player 2";
 		pBack = new Point(25, 445);
-		pPlay = new Point(222, 300);
-		pSetting = new Point(25, 445);
+		pPlay = new Point(220, 300);
+		pSetting = new Point(25, 425);
 		pMenu = new Point(180, 280);
 		pSa = new Point(180, 400);
 		rMenu = 40;

@@ -3,17 +3,18 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 /**
+ * c
  * 
  * @author CaBaNis - Team 2.5
  *
  */
-public class Main extends JFrame{
+public class Main extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private static final int _HEIGHT = 500;
+	private static final int _HEIGHT = 800;
 	private static final int _WIDTH = 550;
 	private PongPanel pongPanel;
-	
+
 	public Main() {
 		setPreferredSize(new Dimension(_WIDTH, _HEIGHT));
 		setTitle("Pong Game - K21T Ltd.");
@@ -21,9 +22,9 @@ public class Main extends JFrame{
 		pongPanel = new PongPanel();
 		getContentPane().add(pongPanel, BorderLayout.CENTER);
 		pack();
-		setResizable(true);
-	}
 	
+	}
+
 	public static void main(String[] args) {
 
 		JFrame frame = new JFrame("Pong Game - K21T Ltd.");
@@ -33,6 +34,7 @@ public class Main extends JFrame{
 		frame.add(pongPanel, BorderLayout.CENTER);
 		frame.setSize(515, 500);
 		frame.setVisible(true);
+		frame.setResizable(false);
 
 	}
 }
