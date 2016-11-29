@@ -129,24 +129,24 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		if(playing){
 
 			// Move player 1
-			if (upPressed) {
+			if (wPressed) {
 				if (playerOneY-paddleSpeed > 0) {
 					playerOneY -= paddleSpeed;
 				}
 			}
-			if (downPressed) {
+			if (sPressed) {
 				if (playerOneY + paddleSpeed + playerOneHeight < getHeight()) {
 					playerOneY += paddleSpeed;
 				}
 			}
 
 			// Move player 2
-			if (wPressed) {
+			if (upPressed) {
 				if (playerTwoY-paddleSpeed > 0) {
 					playerTwoY -= paddleSpeed;
 				}
 			}
-			if (sPressed) {
+			if (downPressed) {
 				if (playerTwoY + paddleSpeed + playerTwoHeight < getHeight()) {
 					playerTwoY += paddleSpeed;
 				}
@@ -398,10 +398,10 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 			// Stop and wait for user input
 			
 			if (w.dialogResult == MyDialogResult.YES) {
-	/**		System.out.printf("User settings: \n Username1: %s \n Username2: %s",
-				s.getUserName1(), s.getUserName2());
-				namePlayer1 = s.getUserName1();
-				namePlayer2 =s.getUserName2(); */
+//		System.out.printf("User settings: \n Username1: %s \n Username2: %s",
+//				s.getUserName1(), s.getUserName2());
+//				namePlayer1 = s.getUserName1();
+//				namePlayer2 =s.getUserName2();
 			} else {
 				System.out.println("User chose to cancel");
 			}
