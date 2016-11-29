@@ -27,6 +27,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 	private boolean playing = false;
 	private boolean gameOver = false;
 	boolean setting;
+	@SuppressWarnings("unused")
 	private volatile boolean isPaused = false;
 	//Background:
 	ImageIcon imgbpong;
