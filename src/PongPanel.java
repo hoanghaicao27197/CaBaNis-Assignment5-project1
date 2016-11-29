@@ -34,10 +34,10 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 	ImageIcon imgbpong;
 
 	// Buttons:
-	Point pPlay, pSetting, pBack, pMenu, pSa;
-	ImageIcon imgbtnPlay, imgbtnSetting, imgbtnBack, imgbgP, imgbtnMenu, imgbtnSa;
-	int rPlay, rSetting, rBack, rMenu, rSa;
-	String nameP, nameS, nameB, namePlayer1, namePlayer2;
+	Point pPlay, pSetting, pBack, pMenu, pSa,pName;
+	ImageIcon imgbtnPlay, imgbtnSetting, imgbtnBack, imgbgP, imgbtnMenu, imgbtnSa,imgbtnName;
+	int rPlay, rSetting, rBack, rMenu, rSa,rName;
+	String nameP, nameS, nameB, nameN, namePlayer1, namePlayer2;
 	boolean intersec, intersec1, intersec2, intersec3, intersec4;
 
 	// Key pressed:
@@ -89,16 +89,18 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		pSetting = new Point(25, 425);
 		pMenu = new Point(180, 280);
 		pSa = new Point(180, 400);
+		pName = new Point(100,100);
 		rMenu = 40;
 		rSa = 35;
 		rSetting = 20;
 		rBack = 15;
 		rPlay = 40;
-
+		rName = 40;
 		// Image links:
 		nameP = "image/play.png";
 		nameS = "image/SettingI.png";
 		nameB = "image/back.png";
+		nameN = "image/playername.png";
 		imgpad1 = new ImageIcon("paddlesimage/paddles1.png");
 		imgpad2 = new ImageIcon("paddlesimage/paddles2.png");
 		ball1 = new ImageIcon("image/unnamed.png");
@@ -296,10 +298,12 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		}
 		if (setting) {
 			imgbtnBack = new ImageIcon(nameB);
+			imgbtnName = new ImageIcon(nameN);
 			g.drawImage(imgbgP.getImage(), 0, 0, 500, 500, null);
 			// g.setFont(new Font(Font.DIALOG, Font.BOLD, 24));
 			// g.drawString("Press 'C' to Menu.", 135, 200);
 			g.drawImage(imgbtnBack.getImage(), pBack.x - rBack, pBack.y - rBack, rBack * 2, rBack * 2, null);
+			g.drawImage(imgbtnName.getImage(), pName.x - 50, pName.y - 50, rName * 4, rName * 2, null);
 			// g.drawString("Soccer", 80, 230);
 			if (intersec2) {
 				g.setColor(Color.white);
@@ -450,12 +454,32 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		} else {
 			// intersec = false;
 			nameP = "image/play.png";
+		}if (getPointDistance(arg0.getPoint(), pName) <= rName) {
+			// intersec = true;
+			SecondWindow w = new SecondWindow();
+			w.setLocationRelativeTo(PongPanel.this);
+			w.setVisible(true);
+			SettingsUsername s = w.getSetings();
+			System.out.println("After open window");
+
+			// Stop and wait for user input
+
+			if (w.dialogResult == MyDialogResult.YES) {
+				System.out.printf("User settings: \n Username1: %s \n Username2: %s", s.getUserName1(),
+						s.getUserName2());
+				namePlayer1 = s.getUserName1();
+				namePlayer2 = s.getUserName2();
+			}
+		} else {
+			// intersec = false;
+
 		}
 		if (getPointDistance(arg0.getPoint(), pSetting) <= rSetting) {
 			intersec4 = true;
 		} else {
 			intersec4 = false;
 		}
+		
 		if (getPointDistance(arg0.getPoint(), pBack) <= rBack) {
 			intersec2 = true;
 
