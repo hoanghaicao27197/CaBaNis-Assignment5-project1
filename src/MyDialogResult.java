@@ -1,5 +1,3 @@
-
-
 public enum MyDialogResult {
 	YES,
 	NO,
