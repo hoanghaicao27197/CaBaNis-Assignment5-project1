@@ -58,14 +58,14 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 	ImageIcon imgpaddle1;
 	private int playerOneX = 25;
 	private int playerOneY = 250;
-	private int playerOneWidth = 20;
+	private int playerOneWidth = 10;
 	private int playerOneHeight = 67;
 
 	// Player 2:
 	ImageIcon imgpaddle2;
 	private int playerTwoX = 465;
 	private int playerTwoY = 250;
-	private int playerTwoWidth = 20;
+	private int playerTwoWidth = 10;
 	private int playerTwoHeight = 67;
 
 	// Paddle Speed:
