@@ -229,20 +229,20 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		super.paintComponent(g);
 		imgbtnPlay = new ImageIcon(nameP);
 		imgbtnSetting = new ImageIcon(nameS);
-		imgbgP = new ImageIcon("background/backgp.jpg");
+		imgbgP = new ImageIcon("background/backgrstart.jpg");
 		// g.setColor(Color.GREEN);
 
-		/** Welcome Screen */
+		/** Welcome Screen */	
 
 		if (showTitleScreen) {
-			Image imgbpong = new ImageIcon("background/backgp.jpg").getImage();
+			Image imgbpong = new ImageIcon("background/backgrstart.jpg").getImage();
 
 			// Game title:
 			// g.setFont(new Font(Font.DIALOG, Font.BOLD, 40));
 			// g.setFont(new Font(Font.DIALOG, Font.BOLD, 40));
 			// g.drawString("Kimochi Pong", 120, 100);
 			g.drawImage(imgbpong, 0, 0, 500, 500, null);
-			g.drawImage(imgbtnPlay.getImage(), pPlay.x - rPlay, pPlay.y - rPlay, rPlay * 3, rPlay * 3, null);
+			g.drawImage(imgbtnPlay.getImage(), pPlay.x -20 , pPlay.y - 80 -  rPlay, rPlay * 3, rPlay * 3, null);
 			g.drawImage(imgbtnSetting.getImage(), pSetting.x - rSetting, pSetting.y - rSetting, rSetting * 2,
 					rSetting * 2, null);
 			if (intersec4) {
@@ -258,7 +258,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 
 		else if (playing) {
 			// Playing Screen:
-			Image background = new ImageIcon("background/background.png").getImage();
+			
 			g.drawImage(background, 0, 0, 500, 500, null);
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 25));
 			g.setColor(Color.blue);

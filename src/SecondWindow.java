@@ -18,7 +18,7 @@ public class SecondWindow extends JDialog{
 	
 	public SecondWindow() {
 		setPreferredSize(new Dimension(300, 200));
-		setTitle("Second Window");
+		setTitle("Register Playername");
 		getContentPane().setLayout(null);
 		setModal(true);
 		
