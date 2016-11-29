@@ -56,14 +56,14 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 	private int ballDeltaY = 3;
 	SecondWindow w = new SecondWindow();
 	// Player 1:
-	ImageIcon imgpad1;
+	ImageIcon imgpaddle1;
 	private int playerOneX = 25;
 	private int playerOneY = 250;
 	private int playerOneWidth = 20;
 	private int playerOneHeight = 67;
 
 	// Player 2:
-	ImageIcon imgpad2;
+	ImageIcon imgpaddle2;
 	private int playerTwoX = 465;
 	private int playerTwoY = 250;
 	private int playerTwoWidth = 20;
@@ -101,8 +101,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		nameS = "image/SettingI.png";
 		nameB = "image/back.png";
 		nameN = "image/playername.png";
-		imgpad1 = new ImageIcon("paddlesimage/paddles1.png");
-		imgpad2 = new ImageIcon("paddlesimage/paddles2.png");
+		imgpaddle1 = new ImageIcon("paddlesimage/paddles1.png");
+		imgpaddle2 = new ImageIcon("paddlesimage/paddles2.png");
 		ball1 = new ImageIcon("image/unnamed.png");
 		ball2 = new ImageIcon("image/basketball.png");
 		ball3 = new ImageIcon("image/Tennis.png");
@@ -293,8 +293,8 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 			// playerOneHeight);
 			// g.fillRect(playerTwoX, playerTwoY, playerTwoWidth,
 			// playerTwoHeight);
-			g.drawImage(imgpad1.getImage(), playerOneX, playerOneY, playerOneWidth, playerTwoHeight, null);
-			g.drawImage(imgpad2.getImage(), playerTwoX, playerTwoY, playerTwoWidth, playerTwoHeight, null);
+			g.drawImage(imgpaddle1.getImage(), playerOneX, playerOneY, playerOneWidth, playerTwoHeight, null);
+			g.drawImage(imgpaddle2.getImage(), playerTwoX, playerTwoY, playerTwoWidth, playerTwoHeight, null);
 		}
 		if (setting) {
 			imgbtnBack = new ImageIcon(nameB);
