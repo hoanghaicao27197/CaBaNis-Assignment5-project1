@@ -35,7 +35,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 
 	// Buttons:
 	Point pPlay, pSetting, pBack, pMenu, pSa,pName;
-	ImageIcon imgbtnPlay, imgbtnSetting, imgbtnBack, imgbgP, imgbtnMenu, imgbtnSa,imgbtnName;
+	ImageIcon imgbtnPlay, imgbtnSetting, imgbtnBack, imgbgStart, imgbtnMenu, imgbtnSa,imgbtnName;
 	int rPlay, rSetting, rBack, rMenu, rSa,rName;
 	String nameP, nameS, nameB, nameN, namePlayer1, namePlayer2;
 	boolean intersec, intersec1, intersec2, intersec3, intersec4;
@@ -229,7 +229,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		super.paintComponent(g);
 		imgbtnPlay = new ImageIcon(nameP);
 		imgbtnSetting = new ImageIcon(nameS);
-		imgbgP = new ImageIcon("background/backgrstart.jpg");
+		imgbgStart = new ImageIcon("background/backgrstart.jpg");
 		// g.setColor(Color.GREEN);
 
 		/** Welcome Screen */	
@@ -299,7 +299,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 		if (setting) {
 			imgbtnBack = new ImageIcon(nameB);
 			imgbtnName = new ImageIcon(nameN);
-			g.drawImage(imgbgP.getImage(), 0, 0, 500, 500, null);
+			g.drawImage(imgbgStart.getImage(), 0, 0, 500, 500, null);
 			// g.setFont(new Font(Font.DIALOG, Font.BOLD, 24));
 			// g.drawString("Press 'C' to Menu.", 135, 200);
 			g.drawImage(imgbtnBack.getImage(), pBack.x - rBack, pBack.y - rBack, rBack * 2, rBack * 2, null);
@@ -317,7 +317,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 
 			// Draw scores
 			// TODO Set Blue color
-			g.drawImage(imgbgP.getImage(), 0, 0, 500, 500, null);
+			g.drawImage(imgbgStart.getImage(), 0, 0, 500, 500, null);
 			g.setColor(Color.BLUE);
 			g.setFont(new Font(Font.DIALOG, Font.BOLD, 36));
 			g.drawString(namePlayer1, 30, 50);
