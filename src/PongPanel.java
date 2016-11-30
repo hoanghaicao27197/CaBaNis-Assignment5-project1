@@ -249,11 +249,12 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 			g.drawImage(imgbtnPlay.getImage(), pPlay.x - 20, pPlay.y - 100, rPlay * 3, rPlay * 3, null);
 			g.drawImage(imgbtnSetting.getImage(), pSetting.x - rSetting, pSetting.y - rSetting, rSetting * 2,
 					rSetting * 2, null);
-			//Sound.play("Sound/intro.wav");
+			//Sound.play("Sound/win.wav");
 			if (intersec4) {
 				g.setColor(Color.white);
 				g.setFont(new Font(Font.SANS_SERIF, Font.TRUETYPE_FONT, 20));
 				g.drawString("Setting", pSetting.x + 30, pSetting.y + 10);
+				Sound.play("Sound/win.wav");
 				
 			}
 			// g.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
@@ -378,6 +379,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 				showTitleScreen = false;
 				playing = true;
 				Sound.play("Sound/click.wav");
+				Sound.play("Sound/win.wav");
 			}
 		} else if (playing) {
 			if (e.getKeyCode() == KeyEvent.VK_UP) {
