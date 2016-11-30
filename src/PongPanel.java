@@ -177,7 +177,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 			if (nextBallLeft < playerOneRight) {
 				// is it going to miss the paddle?
 				if (nextBallTop > playerOneBottom || nextBallBottom < playerOneTop) {
-					Sound.play("Sound/soundtb.wav");
+					Sound.play("Sound/soundpaddles.wav");
 					playerTwoScore++;
 
 					if (playerTwoScore == 3) {
@@ -198,7 +198,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 			if (nextBallRight > playerTwoLeft) {
 				// is it going to miss the paddle?
 				if (nextBallTop > playerTwoBottom || nextBallBottom < playerTwoTop) {
-
+					Sound.play("Sound/soundpaddles.wav");
 					playerOneScore++;
 
 					if (playerOneScore == 3) {
@@ -209,6 +209,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 					ballX = 250;
 					ballY = 250;
 				} else {
+					Sound.play("Sound/hit.wav");
 					ballDeltaX *= -1;
 				}
 			}
