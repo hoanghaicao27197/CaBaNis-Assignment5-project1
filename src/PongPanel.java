@@ -189,7 +189,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 					ballX = 250;
 					ballY = 250;
 				} else {
-					Sound.play("Sound/soundpaddles.wav");
+					Sound.play("Sound/hit.wav");
 					ballDeltaX *= -1;
 				}
 			}
