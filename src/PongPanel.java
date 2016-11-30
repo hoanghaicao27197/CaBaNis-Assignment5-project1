@@ -235,7 +235,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 
 		if (showTitleScreen) {
 			Image imgbpong = new ImageIcon("background/backgrstart.jpg").getImage();
-			Sound.play("Sound/soundtb.wav");
+
 			pName = new Point(000,00);
 			rName = 40;
 			// Game title:
@@ -246,10 +246,12 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 			g.drawImage(imgbtnPlay.getImage(), pPlay.x - 20, pPlay.y - 100, rPlay * 3, rPlay * 3, null);
 			g.drawImage(imgbtnSetting.getImage(), pSetting.x - rSetting, pSetting.y - rSetting, rSetting * 2,
 					rSetting * 2, null);
+			//Sound.play("Sound/intro.wav");
 			if (intersec4) {
 				g.setColor(Color.white);
 				g.setFont(new Font(Font.SANS_SERIF, Font.TRUETYPE_FONT, 20));
 				g.drawString("Setting", pSetting.x + 30, pSetting.y + 10);
+				
 			}
 			// g.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
 			// g.drawString("Press 'P' to play.", 170, 425);
