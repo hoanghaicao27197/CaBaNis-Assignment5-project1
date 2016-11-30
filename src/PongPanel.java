@@ -235,6 +235,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener, Mo
 
 		if (showTitleScreen) {
 			Image imgbpong = new ImageIcon("background/backgrstart.jpg").getImage();
+			Sound.play("Sound/soundtb.wav");
 			pName = new Point(000,00);
 			rName = 40;
 			// Game title:
